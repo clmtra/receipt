@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Заказы</title>
+    <link rel="stylesheet" th:href="@{/styles/style-order.css}"/>
+</head>
+<body>
+<div style="text-align: center; padding-top: 10px">
+    <a style="align-content: center" th:href="@{/}">
+        <img th:src="@{/img/van_logo.png}" style="max-width: 130px; width: 130px;" alt="logo"/>
+    </a>
+</div>
+<div th:switch="${orders}">
+    <div th:case="null" style="text-align: center;">
+        <h2 class="title-results">Ничего не найдено :( Попробуйте ещё</h2>
+        <div class="d2">
+            <form action="#" th:action="@{/}" style="text-align: center;">
+                <button type="submit">назад к поиску</button>
+            </form>
+        </div>
+    </div>
+    <div th:case="*">
+        <table class="title-results">
+            <tr>
+                <th>Номер заказа / Payment ID</th>
+                <th>ФИО</th>
+                <th>E-mail</th>
+                <th>Номер телефона</th>
+                <th>Продукт</th>
+                <th>Комментарий</th>
+                <th>Выдано?</th>
+            </tr>
+            <tr th:each="order : ${orders}">
+                <td th:text="${order.id}"></td>
+                <td th:text="${order.name}"></td>
+                <td th:text="${order.email}"></td>
+                <td th:text="${order.phoneNumber}"></td>
+                <td th:text="${order.product}"></td>
+                <td>
+                    <div th:switch="${order.additionalComment}">
+                        <div th:case="Нет" th:text="Нет"></div>
+                        <div th:case="*" th:text="${order.additionalComment}">
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div th:switch="${order.temporaryReceiptStatus}">
+                        <div th:case="Нет">
+                            <form th:action="@{/order/update}" th:method="PATCH">
+                                <input type="hidden" th:name="orderId" th:value="${order.id}">
+                                <button class="link" type="submit">выдать и отправить чек</button>
+                            </form>
+                        </div>
+                        <div th:case="*">
+                            <div th:switch="${order.temporaryReceiptStatus}">
+                                <div th:case="Успешно">
+                                    <button class="green-button">Заказ выдан, чек отправлен!</button>
+                                </div>
+                                <div th:case="*">
+                                    <button class="red-button">Заказ выдан! Ошибка отправки чека</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <div class="d1">
+            <form action="#" th:action="@{/}">
+                <button type="submit">назад к поиску</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

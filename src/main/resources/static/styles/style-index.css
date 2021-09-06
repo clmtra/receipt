@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 95%;
+}
+
+.grandParentContainer {
+    display: table;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.parentContainer {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div {
+    padding: 15px 0;
+}
+
+form {
+    position: relative;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.find-id {
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #FAC143;
+    border-radius: 5px;
+    outline: none;
+    background: #F9F0DA;
+    color: #9E9C9C;
+}
+
+.id-button {
+    position: absolute;
+    top: 1;
+    right: 0px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #FAC143;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+.find-mail {
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    border: 2px solid #4AA1C8;
+    border-radius: 5px;
+    outline: none;
+    background: #F9F0DA;
+    color: #9E9C9C;
+}
+
+.mail-button {
+    position: absolute;
+    top: 1;
+    right: 0px;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: #4AA1C8;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+
+button:before {
+    content: "\1F50D";
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    color: #F9F0DA;
+}
+
+.title-search {
+    font-family: Roboto, sans-serif;
+    color: #474747;
+}

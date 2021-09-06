@@ -1,0 +1,13 @@
+{
+  "short_name": "WonderTop",
+  "name": "Vandrouki Tabletops",
+  "display": "standalone",
+  "icons": [{
+    "src": "./static/img/van_icon.png",
+    "sizes": "192x192",
+    "type": "image/png"
+  }],
+  "start_url": "../",
+  "theme_color": "#4AA1C8",
+  "background_color": "#ffffff"
+}

@@ -1,0 +1,75 @@
+table {
+    width: 100%;
+    background: white;
+    color: #474747;
+    border-spacing: 1px;
+}
+
+td, th {
+    background: #FAC143;
+    padding: 5px;
+    text-align: center;
+}
+
+div {
+    padding: 10px 0
+}
+
+.d1 {
+    text-align: right;
+}
+
+.d2 {
+    text-align: left;
+}
+
+.title-results {
+    font-family: Roboto, sans-serif;
+    color: #474747;
+}
+
+button {
+    background-color: #4AA1C8;
+    border: none;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: Roboto, sans-serif;
+}
+
+.green-button {
+    background-color: antiquewhite;
+    border: green;
+    border-radius: 5px 5px 5px 5px;
+    color: green;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: none;
+    font-family: Roboto, sans-serif;
+}
+
+.red-button {
+    background-color: antiquewhite;
+    border: red;
+    border-radius: 5px 5px 5px 5px;
+    color: darkred;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: none;
+    font-family: Roboto, sans-serif;
+}
+
+.link {
+    color: white;
+}
